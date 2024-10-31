@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class LinearEquationLogic {
     private Scanner scan;
     private String firstCoordinate = "";
@@ -10,16 +9,10 @@ public class LinearEquationLogic {
     private int y1 = 0;
     private int y2 = 0;
 
-
-
-
     public void start() {
 
 
     }
-
-
-
 
     private void getData() {
         System.out.println("Welcome!");
@@ -30,9 +23,6 @@ public class LinearEquationLogic {
         secondCoordinate = scan.nextLine();
         System.out.println(secondCoordinate);
     }
-
-
-
 
     private void parseData(){
         int firstComma = firstCoordinate.indexOf(",");
