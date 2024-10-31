@@ -51,7 +51,7 @@ public class LinearEquation {
         return "(" + X + ", " + yCoordinate + ")";
     }
 
-    private String lineInfo() {
+    public String lineInfo() {
         return "The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ") \n " +
                 "The equation of the line between these points is: " + equation() +
                 "\n The y-intercept of this line is: " + yIntercept() + "\n The slope of this line is: " +
