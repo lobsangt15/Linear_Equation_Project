@@ -29,33 +29,27 @@ public class LinearEquation {
 
     private String equation() {
         String sign = "";
-        int numerator = Math.abs(y2 - y1);
-        int denominator = Math.abs(x2 - x1);
+        int numerator = y2 - y1;
+        int denominator = x2 - x1;
         String slope = numerator + "/" + denominator;
-        if (slope() < 0) {
-            sign = "-";
-        }
         if (y2 - y1 == 0) {
             return "y = " + yIntercept();
+        } else {
+            return ("y = " + sign + slope + "x " + " + " + yIntercept());
         }
-        if (yIntercept() > 0) {
-            return ("y = " + sign + slope + "x " + " " + yIntercept());
-        } else if (yIntercept() == 0) {
-            return ("y = " + sign + slope + "x" + " + 0");
-        }
-        return ("y = " + sign + slope + "x" + yIntercept());
     }
 
-    private String coordinateForX(double X) {
+    public String coordinateForX(double X) {
         double yCoordinate = (slope() * X) + yIntercept();
+        yCoordinate = roundedToHundredth(yCoordinate);
         return "(" + X + ", " + yCoordinate + ")";
     }
 
     public String lineInfo() {
-        return "The two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ") \n " +
+        return "\nThe two points are: (" + x1 + ", " + y1 + ") and (" + x2 + ", " + y2 + ") \n" +
                 "The equation of the line between these points is: " + equation() +
-                "\n The y-intercept of this line is: " + yIntercept() + "\n The slope of this line is: " +
-                slope() + "\n The distance between these points is " + distance();
+                "\nThe y-intercept of this line is: " + yIntercept() + "\nThe slope of this line is: " +
+                slope() + "\nThe distance between these points is " + distance();
     }
 
     private double roundedToHundredth (double toRound) {
