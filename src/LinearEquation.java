@@ -28,14 +28,35 @@ public class LinearEquation {
     }
 
     private String equation() {
-        String sign = "";
+        String slopeSign = "";
+        String interceptSign = " + ";
         int numerator = y2 - y1;
+        int absNumerator = Math.abs(y2 - y1);
         int denominator = x2 - x1;
-        String slope = numerator + "/" + denominator;
+        int absDenominator = Math.abs(x2 - x1);
+        String slope = absNumerator + "/" + absDenominator;
+        if (numerator % denominator == 0) {
+                slope = Integer.toString(Math.abs(numerator / denominator));
+        }
+        if (Math.abs((double) numerator / denominator) == 1) {
+            slope = "";
+        }
+        if (yIntercept() < 0) {
+            interceptSign = " - ";
+        }
+        if ((double) numerator / denominator < 0) {
+            slopeSign = "-";
+        }
+        if (yIntercept() == 0) {
+            if (numerator / denominator == 0) {
+                return ("y = 0");
+            }
+            return ("y = " + slopeSign + slope + "x");
+        }
         if (y2 - y1 == 0) {
             return "y = " + yIntercept();
         } else {
-            return ("y = " + sign + slope + "x " + " + " + yIntercept());
+            return ("y = " + slopeSign + slope + "x" + interceptSign + Math.abs(yIntercept()));
         }
     }
 

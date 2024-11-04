@@ -31,7 +31,7 @@ public class LinearEquationLogic {
             answer = scan.nextLine();
             System.out.println();
         }
-        System.out.print("Thank you for using the linear equation calculator!");
+        System.out.println("Thank you for using the linear equation calculator!");
     }
 
     private void getData() {
